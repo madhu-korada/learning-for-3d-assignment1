@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title># 16-825 Assignment 1: Rendering Basics with PyTorch3D</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .assignment-title {
+            text-align: center;
+            margin: 40px 0;
+        }
+        .question {
+            background-color: #ffffff;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .question h2 {
+            font-size: 20px;
+            color: #333;
+        }
+        .question img, .question .gif {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-top: 10px;
+        }
+        .question .text-content {
+            margin-top: 10px;
+        }
+        .image-container {
+            display: flex;
+            justify-content: space-around; /* Adjusts spacing between images */
+            align-items: center; /* Aligns images vertically */
+        }
+
+        .image-container img {
+            width: 15%; /* Adjusts image width to fit side by side, considering some space for margin */
+            height: auto; /* Keeps the aspect ratio of the images */
+            margin: 0 1%; /* Optional: Adds a little space between images */
+        }
+
+    </style>
+    <script>
+        // Function to make GIFs play continuously
+        function reloadGifs() {
+            const gifs = document.querySelectorAll('img[src*=".gif"]');
+            gifs.forEach(gif => {
+                const src = gif.src;
+                gif.src = "";
+                gif.src = src;
+            });
+        }
+    
+        // Event listener to reload GIFs on completion of page load
+        window.addEventListener('load', reloadGifs);
+    </script>    
+</head>
+<body>
+
+<div class="assignment-title">
+    <h1>16-825 Assignment 1: Rendering Basics with PyTorch3D</h1>
+    <p>Goals: In this assignment, we learn the basics of rendering with PyTorch3D,
+    explore 3D representations, and practice constructing simple geometry.</p>
+</div>
+
+<div class="question">
+    <h2>1.1. 360-degree Renders </h2>
+    <p class="text-content">360-degree render of the given cow model.</p>
+    <img src="images/cow360.gif" alt="360-degree render of a cow">
+</div>
+
+<div class="question">
+    <h2>1.2 Re-creating the Dolly Zoom </h2>
+    <p class="text-content">Dolly Zoom effect with a provided cow model.</p>
+    <!-- Placeholder for Dolly Zoom Effect Media -->
+    <img src="images/dolly360.gif" alt="360-degree render of a Dolly Zoom effect">
+</div>
+
+<div class="question">
+    <h2>2.1 Constructing a Tetrahedron (5 points)</h2>
+    <p class="text-content">Simple tetrahedron from multiple viewpoints.</p>
+    <p class="text-content">Number of vertices: 4, Number of faces: 4.</p>
+    <!-- Placeholder for Tetrahedron Media -->
+    <img src="images/tetrahedron.gif" alt="360-degree render of a tetrahedron">
+</div>
+
+<div class="question">
+    <h2>2.2 Constructing a Cube (5 points)</h2>
+    <p class="text-content">Showcasing a cube from different angles.</p>
+    <p class="text-content">Number of vertices: 8, Number of faces: 6.</p> 
+    <!-- Placeholder for Cube Media -->
+    <img src="images/cube.gif" alt="360-degree render of a Cube">
+</div>
+
+<div class="question">
+    <h2>3. Re-texturing a mesh (10 points)</h2>
+    <p class="text-content">Re-texturing the given Mesh with color1 = [1, 1, 1] and color2 = [0, 1, 1].</p>
+    <!-- Placeholder for Re-textured Mesh Media -->
+    <img src="images/retextured_mesh.gif" alt="Re-textured mesh">
+</div>
+
+<div class="question">
+    <h2>4. Camera Transformations (10 points)</h2>
+    <p class="text-content">Various camera transformations on a 3D model.</p>
+    <p class="text-content">For Transformation 1: Rotation around the Z axis by 90 degrees. Translation 0 units. </p>
+    <p class="text-content">For Transformation 2: No Rotation. Translation along z axis by -3 units. </p>
+    <p class="text-content">For Transformation 3: No Rotation. Translation along x axis by 0.5 units. </p>
+    <p class="text-content">For Transformation 4: Rotation around the Y axis by 90 degrees. Translation 3 units in X and Z direction. </p>
+    <!-- Placeholder for Camera Transformation Media -->
+    <div class="image-container">
+        <img src="images/transform_cow_transform_1.jpg" alt="Camera transformations">
+        <img src="images/transform_cow_transform_2.jpg" alt="Camera transformations">
+        <img src="images/transform_cow_transform_3.jpg" alt="Camera transformations">
+        <img src="images/transform_cow_transform_4.jpg" alt="Camera transformations">
+    </div>
+
+</div>
+
+<div class="question">
+    <h2>5.1 Rendering Point Clouds from RGB-D Images (10 points)</h2>
+    <p class="text-content">Point clouds from RGB-D images.</p>
+    <!-- Placeholder for Point Clouds Media -->
+    <div class="image-container">
+        <img src="images/rgbd_pcd_1.gif" alt="Rendering Point Clouds from first RGB-D Image">
+        <img src="images/rgbd_pcd_2.gif" alt="Rendering Point Clouds from second RGB-D Image">
+        <img src="images/rgbd_pcd_combined.gif" alt="Rendering Point Clouds from combined RGB-D Images">
+    </div>
+</div>
+
+<div class="question">
+    <h2>5.2 Parametric Functions (10 + 5 points)</h2>
+    <p class="text-content">Torus and Hyperboloid.</p>
+    <!-- Placeholder for Parametric Functions Media -->
+    <div class="image-container">
+        <img src="images/parametric_torus.gif" alt="Parametric Torus">
+        <img src="images/parametric_hyperboloid.gif" alt="Parametric Hyperboloid">
+</div>
+
+<div class="question">
+    <h2>5.3 Implicit Surfaces (15 + 5 points)</h2>
+    <p class="text-content">Torus and Hyperboloid.</p>
+    <!-- Placeholder for Implicit Surfaces Media -->
+    <div class="image-container">
+        <img src="images/implicit_torus.gif" alt="Implicit Torus">
+        <img src="images/implicit_hyperboloid.gif" alt="Implicit Hyperboloid">
+</div>
+
+<div class="question">
+    <h2>6. Do Something Fun (10 points)</h2>
+    <p class="text-content">360 view of a Minion.</p>
+    <img src="images/minion360.gif" alt="Minion">
+</div>
+
+</body>
+
+
