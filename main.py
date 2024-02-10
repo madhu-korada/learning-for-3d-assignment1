@@ -6,7 +6,7 @@
 @Contact :   mkorada@cs.cmu.edu
 @License :   (C)Copyright 2024-2025, Madhu Korada
 @Desc    :   This file contains all the tasks of the assignments.
-@Usage   :   python -m src.tasks 
+@Usage   :   python -m main --question 1.1 
 '''
 
 import argparse
